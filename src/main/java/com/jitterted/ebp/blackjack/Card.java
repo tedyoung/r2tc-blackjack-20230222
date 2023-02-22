@@ -14,7 +14,6 @@ public class Card {
         this.rank = rank;
     }
 
-    // Use this one
     public Card(Suit suit, String rank) {
         this.suit = suit;
         this.rank = rank;
