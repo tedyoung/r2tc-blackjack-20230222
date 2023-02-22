@@ -49,20 +49,26 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card {" +
+        return "Card{" +
                 "suit=" + suit +
-                ", rank=" + rank +
+                ", rank='" + rank + '\'' +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Card card = (Card) o;
 
-        if (!suit.equals(card.suit)) return false;
+        if (suit != card.suit) {
+            return false;
+        }
         return rank.equals(card.rank);
     }
 
