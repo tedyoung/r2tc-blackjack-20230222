@@ -2,8 +2,17 @@ package com.jitterted.ebp.blackjack;
 
 public class Wallet {
 
-    public boolean isEmpty() {
-        return true;
+    private boolean isEmpty;
+
+    public Wallet() {
+        isEmpty = true;
     }
 
+    public boolean isEmpty() {
+        return isEmpty;
+    }
+
+    public void addMoney(int amount) {
+        isEmpty = false;
+    }
 }
