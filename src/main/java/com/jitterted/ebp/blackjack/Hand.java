@@ -46,7 +46,29 @@ public class Hand {
                                         ansi().cursorUp(6).cursorRight(1).toString())));
     }
 
+    boolean isBusted() {
+        return value() > 21;
+    }
+
+    boolean beats(Hand otherHand) {
+        if (isBusted() || otherHand.isBusted()) {
+            throw new IllegalArgumentException();
+        }
+        return otherHand.value() < value();
+    }
+
+    boolean pushes(Hand thisHand) {
+        return thisHand.value() == value();
+    }
+
+    // --- Dealer-specific behavior below: --
+
     Card faceUpCard() {
         return cards.get(0);
     }
+
+    boolean dealerShouldHit() {
+        return value() <= 16;
+    }
+
 }
