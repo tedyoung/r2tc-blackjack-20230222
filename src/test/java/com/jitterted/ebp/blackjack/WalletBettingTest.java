@@ -16,4 +16,16 @@ public class WalletBettingTest {
         assertThat(wallet.balance())
                 .isEqualTo(12 - 8);
     }
+
+    @Test
+    void walletWithBalance27Bet7And9ThenBalanceIs11() {
+        Wallet wallet = new Wallet();
+        wallet.addMoney(27);
+
+        wallet.bet(7);
+        wallet.bet(9);
+
+        assertThat(wallet.balance())
+                .isEqualTo(27 - 7 - 9);
+    }
 }
