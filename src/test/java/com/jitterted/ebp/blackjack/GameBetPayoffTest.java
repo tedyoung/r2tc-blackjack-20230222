@@ -15,15 +15,26 @@ public class GameBetPayoffTest {
     }
 
 
-//    @Test
-//    public void playerDeposits25ThenBalanceIs25() throws Exception {
-//        Game game = new Game();
-//
-//        game.playerDeposits(25);
-//
-//        assertThat(game.playerBalance())
-//                .isEqualTo(25);
-//    }
+    @Test
+    public void playerDeposits25ThenBalanceIs25() throws Exception {
+        Game game = new Game();
+
+        game.playerDeposits(25);
+
+        assertThat(game.playerBalance())
+                .isEqualTo(25);
+    }
+
+    @Test
+    public void playerDeposits15And22ThenBalanceIs37() throws Exception {
+        Game game = new Game();
+
+        game.playerDeposits(15);
+        game.playerDeposits(22);
+
+        assertThat(game.playerBalance())
+                .isEqualTo(15 + 22);
+    }
 
 
 //    @Test
