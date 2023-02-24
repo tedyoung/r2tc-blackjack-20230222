@@ -48,4 +48,10 @@ public class WalletBettingTest {
         assertThatThrownBy(() -> wallet.bet(16))
                 .isInstanceOf(IllegalStateException.class);
     }
+
+    // bet 10: (code in a UI)
+    // if (wallet.canBet(10)) {
+    //   tell user not enough money
+    // }
+
 }
