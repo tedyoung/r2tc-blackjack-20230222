@@ -82,6 +82,18 @@ public class GameBetPayoffTest {
         assertThat(game.playerBalance())
                 .isEqualTo(75 - 40 + 40);
     }
+
+    @Test
+    void playerWith400Bets400WinsBlackjackThenBalanceIs1_000() {
+        Game game = new Game();
+        game.playerDeposits(400);
+        game.playerBets(400);
+
+        game.playerWinsBlackjack();
+
+        assertThat(game.playerBalance())
+                .isEqualTo(1_000);
+    }
 }
 
 
